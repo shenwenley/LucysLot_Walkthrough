@@ -8,10 +8,12 @@ public class Movement : MonoBehaviour {
 
     private Animator animator;
     private bool facingRight = false;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -53,7 +55,8 @@ public class Movement : MonoBehaviour {
             moveDir = moveDir.normalized;
         }
 
-        transform.Translate(moveDir * moveSpeed * Time.deltaTime);
+        //transform.Translate(moveDir * moveSpeed * Time.deltaTime);
+        rb.velocity = moveSpeed * moveDir;
     }
 
     private void Flip()
