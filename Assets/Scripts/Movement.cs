@@ -21,6 +21,15 @@ public class Movement : MonoBehaviour {
 
         Vector2 moveDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
+        if (moveDir.y > 0)
+        {
+            animator.SetBool("FacingBack", true);
+        }
+        else if (moveDir.y < 0)
+        {
+            animator.SetBool("FacingBack", false);
+        }
+
         if (moveDir.magnitude != 0)
         {
             animator.SetBool("IsMoving", true);
@@ -28,12 +37,7 @@ public class Movement : MonoBehaviour {
         else
         {
             animator.SetBool("IsMoving", false);
-        }
-
-        if (moveDir.magnitude > 2)
-        {
-            moveDir = moveDir.normalized;
-        }
+        }        
 
         if(moveDir.x > 0 && !facingRight)
         {
@@ -42,6 +46,11 @@ public class Movement : MonoBehaviour {
         else if (moveDir.x < 0 && facingRight)
         {
             Flip();
+        }
+
+        if (moveDir.magnitude > 2)
+        {
+            moveDir = moveDir.normalized;
         }
 
         transform.Translate(moveDir * moveSpeed * Time.deltaTime);
