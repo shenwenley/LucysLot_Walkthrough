@@ -26,10 +26,12 @@ public class AIMovement : MonoBehaviour {
         if(stop < 25) {
             xDir = 0;
             yDir = 0;
+            animator.speed = 0;
         }
         else {
             xDir = Random.Range(-1.0f, 1.0f);
             yDir = Random.Range(-1.0f, 1.0f);
+            animator.speed = 1;
         }
         float t = Random.Range(.1f, 1);
         Invoke("changeDirection", t);
