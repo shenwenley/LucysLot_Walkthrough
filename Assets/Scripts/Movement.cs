@@ -55,7 +55,6 @@ public class Movement : MonoBehaviour {
             moveDir = moveDir.normalized;
         }
 
-        //transform.Translate(moveDir * moveSpeed * Time.deltaTime);
         rb.velocity = moveSpeed * moveDir;
     }
 
