@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour {
     }
 
     void Update () {
-        Vector2 moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 moveDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if(moveDir.magnitude > 2)
         {
             moveDir = moveDir.normalized;
