@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class SelectObject : MonoBehaviour {
 
+    public string message;
+
     private Color startColor;
     private SpriteRenderer renderer;
 
     private void Start() {
         renderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnMouseDown()
+    {
+        
     }
 
     void OnMouseEnter() {
