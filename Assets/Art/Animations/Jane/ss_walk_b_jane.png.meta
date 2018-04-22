@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: c29c8de99324d3a419422a1c336affac
-timeCreated: 1524417122
+guid: e879a3c0093667e4fb97f471c9d6073a
+timeCreated: 1524422830
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ss_w_f_farlo_0
-    21300002: ss_w_f_farlo_1
-    21300004: ss_w_f_farlo_2
-    21300006: ss_w_f_farlo_3
+    21300000: ss_walk_b_jane_0
+    21300002: ss_walk_b_jane_1
+    21300004: ss_walk_b_jane_2
+    21300006: ss_walk_b_jane_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -74,52 +74,52 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ss_w_f_farlo_0
+      name: ss_walk_b_jane_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1376
-        width: 930
-        height: 1376
+        y: 960
+        width: 374
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ss_w_f_farlo_1
+      name: ss_walk_b_jane_1
       rect:
         serializedVersion: 2
-        x: 930
-        y: 1376
-        width: 930
-        height: 1376
+        x: 374
+        y: 960
+        width: 374
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ss_w_f_farlo_2
+      name: ss_walk_b_jane_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 930
-        height: 1376
+        width: 374
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ss_w_f_farlo_3
+      name: ss_walk_b_jane_3
       rect:
         serializedVersion: 2
-        x: 930
+        x: 374
         y: 0
-        width: 930
-        height: 1376
+        width: 374
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
