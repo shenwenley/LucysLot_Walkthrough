@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour {
 
     private void Start()
     {
+        Vector2 pos = StaticPosition.location;
+        transform.position = pos;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }

@@ -10,6 +10,7 @@ public class SelectObjectNoMessage : MonoBehaviour {
     private bool touching;
 
     public string levelName;
+    public Vector2 loc;
 
     private void Start() {
         touching = false;
@@ -18,7 +19,8 @@ public class SelectObjectNoMessage : MonoBehaviour {
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.E) && touching) {
+        if(Input.GetMouseButtonDown(0) && touching) {
+            StaticPosition.location = loc;
             SceneManager.LoadScene(levelName);
         }
     }
