@@ -12,6 +12,10 @@ public class SelectObject : MonoBehaviour {
     private SpriteRenderer renderer;
     private GameObject canvas;
 
+    public Texture2D cursorTexture;
+    private CursorMode cursorMode = CursorMode.Auto;
+    private Vector2 hotSpot = Vector2.zero;
+
     private void Start() {
         renderer = GetComponent<SpriteRenderer>();
     }
@@ -24,10 +28,12 @@ public class SelectObject : MonoBehaviour {
 
     void OnMouseEnter() {
         startColor = renderer.material.color;
-        renderer.material.color = Color.red;
+        renderer.material.color = new Color(1f, 0.686f, 0.686f,1f);
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
 
     void OnMouseExit() {
         renderer.material.color = startColor;
+        Cursor.SetCursor(null, hotSpot, cursorMode);
     }
 }

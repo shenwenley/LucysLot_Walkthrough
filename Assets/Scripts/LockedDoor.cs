@@ -7,9 +7,15 @@ public class LockedDoor : MonoBehaviour {
     public AudioClip openDoor;
     private AudioSource source;
 
+    public Texture2D cursorTexture;
+    private CursorMode cursorMode = CursorMode.Auto;
+    private Vector2 hotSpot = Vector2.zero;
+
     private Color startColor;
+    public Color selected = new Color(1f, 0.686f, 0.686f, 1f);
     private SpriteRenderer renderer;
     private bool touching;
+    private bool enter;
 
     public string levelName;
     public Vector2 loc;
@@ -24,7 +30,7 @@ public class LockedDoor : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && touching)
+        if (Input.GetMouseButtonDown(0) && touching && enter)
         {
             StaticPosition.location = loc;
             source.PlayOneShot(openDoor, 1);
@@ -32,12 +38,24 @@ public class LockedDoor : MonoBehaviour {
         }
     }
 
+    private void OnMouseEnter()
+    {
+        enter = true;
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+    }
+
+    private void OnMouseExit()
+    {
+        enter = false;
+        Cursor.SetCursor(null, hotSpot, cursorMode);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("enter player");
-            renderer.material.color = Color.red;
+            renderer.material.color = selected;
             touching = true;
         }
     }
