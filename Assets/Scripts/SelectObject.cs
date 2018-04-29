@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectObject : MonoBehaviour {
 
-    public string message;
+    [TextArea(5, 10)]
+    public string message = "This is the typed test message";
 
     private Color startColor;
     private SpriteRenderer renderer;
+    private GameObject canvas;
 
     private void Start() {
         renderer = GetComponent<SpriteRenderer>();
@@ -15,7 +18,8 @@ public class SelectObject : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        TooltipManager.Instance.CreateTooltip(message, mousePos);
     }
 
     void OnMouseEnter() {
