@@ -5,15 +5,19 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     public float moveSpeed;
+    public AudioClip walkSound;
+    private AudioSource source;
 
     private Animator animator;
     private bool facingRight = false;
     private Rigidbody2D rb;
+   
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,10 +39,15 @@ public class Movement : MonoBehaviour {
         if (moveDir.magnitude != 0)
         {
             animator.SetBool("IsMoving", true);
+            if (!source.isPlaying)
+            {
+                source.PlayOneShot(walkSound, 1);
+            }
         }
         else
         {
             animator.SetBool("IsMoving", false);
+            source.Stop();
         }        
 
         if(moveDir.x > 0 && !facingRight)
